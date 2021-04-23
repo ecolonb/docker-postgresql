@@ -39,3 +39,9 @@ CREATE TABLE "character_by_comics" (
   CONSTRAINT "fk_character_by_comics_character" FOREIGN KEY ("character_id") REFERENCES "characters" ("character_id") ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT "fk_character_by_comics_ccomics" FOREIGN KEY ("comic_id") REFERENCES "comics" ("comic_id") ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+
+CREATE TABLE "sync_information" (
+  "id" SERIAL PRIMARY KEY,
+  "last_sync" timestamptz(6) NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
